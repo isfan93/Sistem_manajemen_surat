@@ -28,7 +28,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/surat_masuk', [SuratController::class, 'surat_m'])->name('surat-masuk')->middleware('auth');
 Route::get('/surat_keluar', [SuratController::class, 'surat_k'])->name('surat-keluar')->middleware('auth');
-Route::get('/surat_masuk/tambah', [SuratController::class, 'tambah_surat_m'])->name('tambah-surat-masuk')->middleware('auth');
+Route::get('/surat_masuk/view', [SuratController::class, 'view_doc'])->name('view-doc')->middleware('auth');
 Route::get('/surat_m/sortir_surat', [SuratController::class, 'surat_m'])->name('sortir');
 
 Route::get('/error404', [SuratController::class, 'error404'])->name('error');

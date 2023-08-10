@@ -20,7 +20,7 @@ class SuratController extends Controller
             $surat = SuratMasuk::all();
         }
         
-        // $sortir = SuratMasuk::whereBetween('tgl_srt', [$startDate, $endDate])->get();
+        // $sortir = SuratMasuk::where('tgl_srt','='. $req->date1.'')->get();
         return view('suratmasuk', ['surat_m' => $surat]);
         
     }
@@ -35,10 +35,10 @@ class SuratController extends Controller
         return view('suratkeluar');
     }
 
-    public function tambah_surat_m()
-    {
-        return view('suratmasuk_add');
-    }
+    // public function view_doc()
+    // {
+    //     return view('view_doc');
+    // }
 
     public function error404(){
         return view('error404');
