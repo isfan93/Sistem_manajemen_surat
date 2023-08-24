@@ -1,1 +1,1 @@
-<iframe src="surat.pdf" width="100%" height="600px">
+<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=http://yourdomain.com/document.pdf" style="width:100%; height: 100%" frameborder="0"> </iframe>

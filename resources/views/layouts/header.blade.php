@@ -5,13 +5,13 @@
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#">
                 <!-- Logo icon -->
                 <b class="logo-icon ps-2">
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <img src="assets/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
-
+                    <img style="width: 100px; height: 60px" src="\assets/img/calmdevlogo.png" alt="homepage" class="light-logo" />
+                    
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
@@ -52,7 +52,7 @@
                 <!-- ============================================================== -->
                 <!-- create new -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
                         <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
@@ -63,17 +63,17 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <!-- ============================================================== -->
                 <!-- Search -->
                 <!-- ============================================================== -->
-                <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
+                {{-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
                         href="javascript:void(0)"><i class="ti-search"></i></a>
                     <form class="app-search position-absolute">
                         <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
                             class="srh-btn"><i class="ti-close"></i></a>
                     </form>
-                </li>
+                </li> --}}
             </ul>
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
@@ -163,9 +163,15 @@
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
                 <!-- ============================================================== -->
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <p>{{ Auth::user()->name }}</p>
+                    </a>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets/admin/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                        <img src="\assets/admin/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                         {{-- <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user me-1 ms-1"></i>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SuratMasuk;
-use App\Http\Requests\StoreSuratMasukRequest;
-use App\Http\Requests\UpdateSuratMasukRequest;
+use App\Models\SuratKeluar;
+use App\Http\Requests\StoreSuratKeluarRequest;
+use App\Http\Requests\UpdateSuratKeluarRequest;
 
-class SuratMasukController extends Controller
+class SuratKeluarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class SuratMasukController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSuratMasukRequest $request)
+    public function store(StoreSuratKeluarRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class SuratMasukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SuratMasuk $suratMasuk)
+    public function show(SuratKeluar $suratKeluar)
     {
         //
     }
@@ -43,7 +43,7 @@ class SuratMasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SuratMasuk $suratMasuk)
+    public function edit(SuratKeluar $suratKeluar)
     {
         //
     }
@@ -51,7 +51,7 @@ class SuratMasukController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSuratMasukRequest $request, SuratMasuk $suratMasuk)
+    public function update(UpdateSuratKeluarRequest $request, SuratKeluar $suratKeluar)
     {
         //
     }
@@ -59,7 +59,7 @@ class SuratMasukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SuratMasuk $suratMasuk)
+    public function destroy(SuratKeluar $suratKeluar)
     {
         //
     }

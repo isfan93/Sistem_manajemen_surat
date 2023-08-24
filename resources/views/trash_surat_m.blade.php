@@ -1,14 +1,14 @@
 @extends('layouts.main')
 @section('content')
-@section('breadcrumb', 'Surat Masuk')
-@section('title', 'Surat Masuk')
+@section('breadcrumb', 'Trash Surat Masuk')
+@section('title', 'Surat Masuk Dihapus')
     
 <div class="row">
     <!-- Column -->
     <div class="col-lg-12">
         <div class="card ">
             <div class="box bg-cyan">
-                <form action="{{ route('surat-masuk') }}" method="get">
+                <form action="#" method="get">
                 <div class="row">
                         <div class="col-4">
                             <input type="text" name="search" class="form-control" placeholder="Cari">
@@ -29,19 +29,19 @@
 <div class="row">
     <div class="card">
         <div class="card-body">
-            <form action="#" method="get">
+            {{-- <form action="{{ route('surat-masuk') }}" method="get">
                 <div class="row pb-2">
                     <div class="col-2">
-                        <input type="date" name="start_date" class="form-control">
+                        <input type="date" name="date1" class="form-control">
                     </div>
                     <div class="col-2">
-                        <input type="date" name="end_date" class="form-control">
+                        <input type="date" name="date2" class="form-control">
                     </div>
                     <div class="col-2">
                         <button type="submit" class="btn btn-primary card-hover">Sort</button>
                     </div>
                 </div>
-            </form>
+            </form> --}}
             <div class="table-responsive">
                 <table id="zero_config" class="table table-striped table-bordered text-center">
                     <thead>
@@ -59,7 +59,7 @@
                         $no=1;
                     @endphp
                     <tbody>
-                        @foreach ($surat_m as $srt)
+                        @foreach ($surat as $srt)
                         <tr>
                             <td>{{ $no++}}</td>
                             <td>{{ $srt->no_srt }}</td>
@@ -68,10 +68,8 @@
                             <td>{{ $srt->doc }}</td>
                             <td>{{ $srt->tgl_srt }}</td>
                             <td>
-                                <a href="surat masuk/{{ $srt->doc }}" class="btn btn-primary text-white card-hover">Download</a>
-                                <a href="" class="btn btn-warning text-white card-hover" data-bs-toggle="modal" data-bs-target="#editData{{ $srt->id }}">Edit</a>
-                                {{-- <a href="" class="btn btn-success text-white card-hover">Disp</a> --}}
-                                <a class="btn btn-danger text-white card-hover delete" data-id="{{ $srt->id }}" data-nama="{{ $srt->judul_srt }}">Hapus</a>
+                                <a href="{{ route('restore', $srt->id) }}" class="btn btn-success text-white card-hover">Restore</a>
+                                <a href="#" class="btn btn-warning text-white card-hover delete" data-id="{{ $srt->id }}" data-nama="{{ $srt->judul_srt }}">Delete Pemanent</a>
                             </td>
                         </tr>
 
@@ -120,7 +118,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{-- {{ $surat_m->links() }} --}}
+                {{-- {{ $surat->links() }} --}}
             </div>
 
         </div>
@@ -139,7 +137,7 @@
             {{ csrf_field() }}
             <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">No Surat</label>
-                <input type="text" class="form-control" id="recipient-name" name="no_srt" value="{{ $nomor }}">
+                <input type="text" class="form-control" id="recipient-name" name="no_srt">
             </div>
             <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Judul Surat</label>
@@ -175,7 +173,7 @@
         var nama_surat = $(this).attr('data-nama');
 
         swal({
-        title: "Yakin?",
+        title: "Yakin Hapus Permanen?",
         text: "Kamu akan menghapus surat dari "+nama_surat+" ?",
         icon: "warning",
         buttons: true,
@@ -183,7 +181,7 @@
         })
         .then((willDelete) => {
         if (willDelete) {
-            window.location = "/surat_masuk/hapus/"+id_surat+""
+            window.location = "/hapus_permanen/"+id_surat+""
             swal("Data Berhasil dihapus ", {
             icon: "success",
             });
